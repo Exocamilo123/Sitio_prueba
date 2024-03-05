@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/dashboard1.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Admin</title>
+</head>
+<body>
+      
+  <div class="container-fluid">
+    <div class="row content">
+      <div class="col-sm-3 sidenav hidden-xs">
+        <h2>Administrador</h2>
+
+        <div class="tab-buttons">
+            <ul class="nav nav-pills nav-stacked">
+                <li><a class="tab-button active" data-tab="tab1">Ejercicios</a></li>
+                <li><a class="tab-button" data-tab="tab2">Administracion</a></li>
+            </ul><br>
+        </div>
+      </div>
+      <br>
+      
+      <div class="contenedor">
+
+        <div id="tab1" class="tab-item active">
+
+
+            <div class="ejerciciosE">
+              <h1>Ejercicios español(no funcional)</h1>
+              <a href="#" class="ejercicioE">Ejercicio 1</a>
+              <a href="#" class="ejercicioE">Ejercicio 2</a>
+              <a href="#" class="ejercicioE">Ejercicio 3</a>
+            </div>
+
+            <div class="ejerciciosM">
+              <h1>Ejercicios matematicas(no funcional)</h1>
+              <a href="#" class="ejercicioM">Ejercicio 1</a>
+              <a href="#" class="ejercicioM">Ejercicio 1</a>
+              <a href="#" class="ejercicioM">Ejercicio 1</a>
+            </div>
+
+            <div class="ejerciciosCr">
+              <h1>Ejercicios otros(no funcional)</h1>
+              <a href="#" class="ejercicioCr">Ejercicio 1</a>
+              <a href="#" class="ejercicioCr">Ejercicio 1</a>
+              <a href="#" class="ejercicioCr">Ejercicio 1</a>
+            </div>
+          
+          </div>
+          <div id="tab2" class="tab-item">
+            <h1>Registros(no funcional)</h1>
+            <table>
+              <thead>
+                  <tr>
+                      <th class="Titulo">Nombre Completo</th>
+                      <th class="Titulo">Documento</th>
+                      <th class="Titulo">Teléfono</th>
+                      <th class="Titulo">Correo Electrónico</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td>brayan</td>
+                      <td>1023371462</td>
+                      <td>123456789</td>
+                      <td>Brayan@gmail.com</td>
+                  </tr>
+                  <tr>
+                      <td>a</td>
+                      <td>a</td>
+                      <td>a</td>
+                      <td>a</td>
+                  </tr>
+                  <tr>
+                    <td>a</td>
+                    <td>a</td>
+                    <td>a</td>
+                    <td>a</td>
+                </tr>
+                <tr>
+                  <td>a</td>
+                  <td>a</td>
+                  <td>a</td>
+                  <td>a</td>
+              </tr>
+              <tr>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+            </tr>
+              </tbody>
+          </table>
+          </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+
+
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabItems = document.querySelectorAll('.tab-item');
+
+
+    function changeTab(event) {
+
+    const tabId = event.target.getAttribute('data-tab');
+
+
+    tabButtons.forEach(button => {
+        button.classList.remove('active');
+    });
+    tabItems.forEach(item => {
+        item.classList.remove('active');
+    });
+
+
+    event.target.classList.add('active');
+    document.getElementById(tabId).classList.add('active');
+
+
+    localStorage.setItem('activeTab', tabId);
+    }
+
+    tabButtons.forEach(button => {
+    button.addEventListener('click', changeTab);
+    });
+
+    const activeTab = localStorage.getItem('activeTab');
+
+    if (activeTab) {
+
+    tabButtons.forEach(button => {
+        button.classList.remove('active');
+    });
+    tabItems.forEach(item => {
+        item.classList.remove('active');
+    });
+
+    document.querySelector(`[data-tab="${activeTab}"]`).classList.add('active');
+    document.getElementById(activeTab).classList.add('active');
+    }
+  
+</script>
+
+</body>
+</html>

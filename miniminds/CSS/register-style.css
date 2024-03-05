@@ -1,0 +1,68 @@
+body{ 
+  background-color: #fdcae1 ; 
+  font-family: 'Courier New', Courier, monospace; 
+
+}
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .form {
+    width: 400px; /* Aumentamos el ancho del formulario */
+    padding: 40px;
+    background-color: #f2f2f2;
+    border-radius: 30px;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+
+  h1 {
+
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 10px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="password"],
+  input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+  
+  p {
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  a  {
+
+    text-decoration: none;
+    color: #4caf50;
+    
+  }
